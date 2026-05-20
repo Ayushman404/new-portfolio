@@ -368,7 +368,7 @@ const About = () => {
               <div className="h-full flex flex-col justify-between">
                 <div className="flex flex-col justify-center flex-1 w-full">
                   <a
-                    href="/Ayushman_resume_dec18.pdf"
+                    href="/Ayushman_Resume.pdf"
                     target="_blank"
                     className="relative overflow-hidden flex flex-col items-center justify-center gap-1.5 w-full py-3 bg-slate-100 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700/50 rounded-lg transition-all group"
                   >

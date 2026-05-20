@@ -152,9 +152,9 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <div className="h-4 w-px bg-slate-200 dark:bg-slate-700 mx-2" />
+          {/* <div className="h-4 w-px bg-slate-200 dark:bg-slate-700 mx-2" /> */}
 
-          {/* THEME */}
+          {/* THEME
           <Magnetic>
             <motion.button
               onClick={toggleTheme}
@@ -183,7 +183,7 @@ const Navbar = () => {
                 )}
               </AnimatePresence>
             </motion.button>
-          </Magnetic>
+          </Magnetic> */}
         </motion.nav>
       </div>
 
@@ -226,9 +226,9 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <motion.button onClick={toggleTheme} whileTap={{ scale: 0.9 }}>
+          {/* <motion.button onClick={toggleTheme} whileTap={{ scale: 0.9 }}>
             {theme === "dark" ? <Moon size={18} /> : <Sun size={18} />}
-          </motion.button>
+          </motion.button> */}
         </motion.nav>
       </div>
     </>

@@ -1,127 +1,135 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValueEvent } from 'framer-motion';
-import { Github, ExternalLink, X, ArrowRight, MousePointer2, Layers, AlertTriangle, Hash, Calendar } from 'lucide-react';
+import { Github, ExternalLink, X, ArrowRight, MousePointer2, Layers, AlertTriangle, Hash, Calendar, Sparkles, Check } from 'lucide-react';
 import HackerText from '../ui/HackerText';
 
 // --- DATA ---
 const PROJECTS = [
   {
     id: 1,
+    title: "Institutional CMS - IIT Patna",
+    category: "Systems & Infrastructure",
+    year: "2026",
+    image: "/dashboardProject/insti_site.png",
+    description:
+      "The official content management ecosystem engineered for IIT Patna, migrating the institution to a modern, self-service digital infrastructure.",
+    stack: [
+      "PostgreSQL",
+      "Express",
+      "React",
+      "Node.js",
+      "Prisma ORM",
+      "Docker",
+      "Nginx",
+    ],
+    challenges:
+      "Architecting granular, multi-departmental role-based access control while deploying on bare-metal institutional infrastructure.",
+    features: [
+      "Engineered platform serving 100+ faculty members across 10+ academic departments concurrently",
+      "Built rigorous backend RBAC achieving 100% data consistency during cross-departmental edits",
+      "Containerized using Docker and deployed on local bare-metal servers optimized via Nginx for high availability",
+      "Reduced administrative overhead by 60% by enabling decentralized, permission-based faculty self-service editing",
+    ],
+    links: {
+      github: "https://drive.google.com/file/d/1wJz7kH-2CIoZacerZXmHKQQQkzkH5JHn/view?usp=drivesdk",
+      demo: "https://www.iitp.ac.in",
+    },
+    colorClass: "from-blue-900 via-indigo-950 to-black",
+  },
+
+  {
+    id: 2,
+    title: "Clinical Data Normalization Engine",
+    category: "Applied Generative AI",
+    year: "2026",
+    image: "/dashboardProject/jilo.png",
+    description:
+      "An AI-powered Revenue Cycle Management pipeline that processes unstructured clinical data into FHIR-compliant payloads (Awarded 2nd Place in Hackathon).",
+    stack: [
+      "Python",
+      "LangChain",
+      "React",
+      "PostgreSQL",
+      "pgvector",
+      "Semantic Search",
+      "RAG Systems",
+    ],
+    challenges:
+      "Mitigating hallucination and maximizing entity recognition accuracy across highly irregular, unstructured medical records.",
+    features: [
+      "Designed an automated pipeline normalizing raw patient records to FHIR JSON specs with direct ICD-10 and CPT mapping",
+      "Achieved 87% semantic accuracy on clinical entity recognition using specialized prompt pipelines",
+      "Reduced preauthorization turnaround time drastically from 2+ hours down to 8 minutes per case",
+      "Built a hybrid retrieval-augmented generation (RAG) pipeline streamlining population across 50+ unique insurance claim fields",
+    ],
+    links: {
+      github: "https://github.com/Darshini-Shah/Jilo",
+      demo: "https://youtu.be/qoG-zO9x740",
+    },
+    colorClass: "from-emerald-950 via-teal-900 to-slate-950",
+  },
+
+  {
+    id: 3,
     title: "SecureVote",
     category: "Systems & Security",
     year: "2025",
     image: "/dashboardProject/secureVoteHome.png",
     description:
-      "A secure e-voting platform implementing Linkable Ring Signatures to guarantee voter anonymity and verifiable election integrity.",
+      "A secure, decentralized e-voting platform implementing advanced cryptographic protocols to ensure structural election integrity.",
     stack: [
       "MongoDB",
       "Express",
       "React",
       "Node.js",
       "Linkable Ring Signatures",
+      "OAuth 2.0",
       "JWT",
-      "Google OAuth",
     ],
     challenges:
-      "Designing cryptographic vote validation while preserving anonymity across the entire system.",
+      "Designing cryptographic vote validation while preserving absolute anonymity and preventing double-voting across the entire network.",
     features: [
-      "Anonymous yet linkable voting using LRS",
-      "Admin-controlled election creation and management",
-      "Tamper-resistant result computation",
-      "Secure authentication and role-based access",
+      "Engineered cryptographic voting protocol using Linkable Ring Signatures to guarantee 100% voter anonymity",
+      "Achieved sub-100ms cryptographic verification per ballot with integrity validation for all records",
+      "Deployed secure OAuth 2.0 authentication with custom middleware and role-based access controls",
+      "Built tamper-resistant backend election state transitions to enforce immutable result computation",
     ],
     links: {
       github: "https://github.com/Ayushman404/secureVote",
       demo: "https://secure-vote-frontend.onrender.com",
     },
-    colorClass: "from-transparent to-purple-700",
-  },
-
-  {
-    id: 2,
-    title: "AnimeMate",
-    category: "Applied Generative AI",
-    year: "2025",
-    image: "/dashboardProject/animeMateChatHome.png",
-    description:
-      "An AI-powered chatbot enabling in-character, mood-controlled conversations with anime characters using modern LLM APIs.",
-    stack: [
-      "React",
-      "TailwindCSS",
-      "OpenAI / Gemini API",
-      "Prompt Engineering",
-      "Session Storage",
-    ],
-    challenges:
-      "Maintaining consistent character personalities and moods across dynamic user conversations.",
-    features: [
-      "Multiple character personas with strict in-character responses",
-      "Mood-based response modulation",
-      "Session-only memory for anonymity",
-      "Optimized prompt structure for consistency",
-    ],
-    links: {
-      github: "https://github.com/Ayushman404/chibi-talk",
-      demo: "https://anime-mate.vercel.app/",
-    },
-    colorClass: "from-pink-600 via-rose-600 to-red-600",
-  },
-
-  {
-    id: 3,
-    title: "QuickEats",
-    category: "Full-Stack Development",
-    year: "2025",
-    image: "/dashboardProject/quickEatsHome.png",
-    description:
-      "A full-stack food delivery platform with real-time ordering, admin controls, and secure Stripe-based payments.",
-    stack: [
-      "MongoDB",
-      "Express",
-      "React",
-      "Node.js",
-      "Stripe API",
-      "JWT",
-      "TailwindCSS",
-    ],
-    challenges:
-      "Designing a secure and responsive checkout flow while managing real-time admin updates.",
-    features: [
-      "Customer ordering interface",
-      "Admin dashboard for menu and order management",
-      "Secure Stripe payment integration",
-      "Responsive UI across devices",
-    ],
-    links: {
-      github: "https://github.com/Ayushman404/food-del",
-      demo: "https://quickeats-food.vercel.app",
-    },
-    colorClass: "from-emerald-600 via-teal-600 to-cyan-600",
+    colorClass: "from-purple-950 via-fuchsia-900 to-zinc-950",
   },
 
   {
     id: 4,
-    title: "Student Productivity Dashboard",
-    category: "Frontend & Fundamentals",
-    year: "2025",
-    image: "/dashboardProject/Courses.png",
+    title: "FocusNest",
+    category: "Systems & Android Automation",
+    year: "2026",
+    image: "/dashboardProject/droidrun.png",
     description:
-      "A student-focused dashboard for managing tasks, courses, CPI calculation, and academic resources.",
-    stack: ["HTML", "CSS", "JavaScript", "LocalStorage"],
+      "A high-frequency, stateful anti-procrastination external governor powered by Computer Vision, ADB, and local LLMs (Awarded 2nd Place at DroidRun).",
+    stack: [
+      "FastAPI",
+      "SQLite",
+      "Python",
+      "Android Debug Bridge (ADB)",
+      "Qwen 2.5",
+      "Tesseract OCR",
+    ],
     challenges:
-      "Building scalable state management and computation logic using vanilla JavaScript.",
+      "Plugging architectural loopholes (app-cycling, landscape blindspots, browser backdoors) to defeat sophisticated user evasion tactics.",
     features: [
-      "Task and deadline tracking",
-      "Dynamic CPI calculation",
-      "Course and credit management",
-      "Persistent state using LocalStorage",
+      "Designed 'The Penalty Box' logic in RAM to instantly eliminate the 10-second infinite grace-period exploit",
+      "Built active UI interrogation to force orientation wake-ups via simulated hardware taps for landscape content assessment",
+      "Implemented a real-time OCR URL hunter to block short-form content links disguised inside standard mobile browsers",
+      "Developed a robust FastAPI shutdown architecture forcing background tasks to cleanly terminate and commit state without orphan processes",
     ],
     links: {
-      github:
-        "https://github.com/Ayushman404/WebDev/tree/main/student_dashboard",
-      demo: "https://student-dashboard-4673.vercel.app",
+      github: "https://github.com/Ayushman404/droidrun_devsprint",
+      demo: "https://youtu.be/C1IrkX6WDCY?si=uCEXZ8he_WvLsxqL", // Replace with your actual link
     },
-    colorClass: "from-slate-600 via-gray-700 to-zinc-800",
+    colorClass: "from-rose-950 via-crimson-900 to-stone-950",
   },
 ];
 
@@ -261,7 +269,7 @@ const CTACard = ({ isActive }) => (
         animate={{ scale: isActive ? 1.05 : 1 }}
         transition={{ duration: 0.5 }}
     >
-        <a href="#" className="group relative w-full h-full rounded-[2.5rem] overflow-hidden cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500 border border-[var(--color-primary)]/20 bg-[var(--color-light-card)] dark:bg-slate-900/40 backdrop-blur-md flex flex-col items-center justify-center text-center">
+        <a href="https://github.com/Ayushman404" target='_blank' className="group relative w-full h-full rounded-[2.5rem] overflow-hidden cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500 border border-[var(--color-primary)]/20 bg-[var(--color-light-card)] dark:bg-slate-900/40 backdrop-blur-md flex flex-col items-center justify-center text-center">
             <div className={`absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/10 to-transparent transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />
             <div className="relative z-10 p-8">
                 <div className={`w-20 h-20 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] flex items-center justify-center mx-auto mb-6 transition-all duration-500 shadow-lg ${isActive ? 'bg-[var(--color-primary)] text-white' : 'group-hover:bg-[var(--color-primary)] group-hover:text-white'}`}>
@@ -279,7 +287,12 @@ const CTACard = ({ isActive }) => (
 )
 
 const ProjectModal = ({ project, onClose }) => (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
+    <div 
+        className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
+        // FIX 1: Intercept and destroy wheel/touch events before they bubble up to Framer Motion
+        onWheel={(e) => e.stopPropagation()}
+        onTouchMove={(e) => e.stopPropagation()}
+    >
         <motion.div 
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             onClick={onClose} 
@@ -290,33 +303,78 @@ const ProjectModal = ({ project, onClose }) => (
             initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 50, opacity: 0 }}
             className="relative w-full max-w-6xl h-[85vh] bg-white dark:bg-[#0b1121] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col md:flex-row border border-slate-200 dark:border-slate-800"
         >
-            <button onClick={onClose} className="absolute top-6 right-6 z-30 p-3 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full transition-all text-white"><X size={20} /></button>
+            {/* Close Button */}
+            <button 
+                onClick={onClose} 
+                className="absolute top-6 right-6 z-30 p-3 bg-white/50 hover:bg-white dark:bg-black/20 dark:hover:bg-black/40 backdrop-blur-md rounded-full transition-all text-slate-900 dark:text-white shadow-sm"
+            >
+                <X size={20} />
+            </button>
             
-            <div className="w-full md:w-5/12 h-64 md:h-full relative overflow-hidden bg-slate-900">
-                <img src={project.image} className="w-full h-full object-cover opacity-90" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+            {/* Left Side: Image Banner */}
+            <div className="w-full md:w-5/12 h-64 md:h-full relative overflow-hidden bg-slate-900 shrink-0">
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <div className={`absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r ${project.colorClass}`} />
             </div>
 
-            <div className="w-full md:w-7/12 p-10 md:p-16 overflow-y-auto bg-white/80 dark:bg-[#0b1121] backdrop-blur-sm">
-                <div className="mb-8">
+            {/* Right Side: Scrollable Content */}
+            {/* FIX 2: Added 'overscroll-contain' to prevent scroll chaining when hitting the bottom */}
+            <div className="w-full md:w-7/12 p-7 md:p-9 lg:p-10 overflow-y-auto overscroll-contain bg-white/80 dark:bg-[#0b1121] backdrop-blur-sm">
+                
+                {/* Header Section */}
+                <div className="mb-3 md:mb-5">
                     <span className={`inline-block text-[10px] font-bold px-3 py-1 rounded-full bg-gradient-to-r ${project.colorClass} text-white mb-4 tracking-widest uppercase`}>
                         {project.category}
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 leading-[0.95] tracking-tight">
+                    <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 leading-[1.05] tracking-tight">
                         {project.title}
                     </h2>
-                    <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                    <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
                         {project.description}
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-slate-200 dark:border-slate-800 pt-8">
+                {/* Action Buttons */}
+                <div className="pt-2 flex flex-col sm:flex-row gap-4">
+                    <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold hover:scale-[1.02] transition-transform shadow-lg">
+                        <Github size={18} /> Proof of Work
+                    </a>
+                    <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl border border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
+                        <ExternalLink size={18} /> Live Demo
+                    </a>
+                </div>
+
+                {/* Features Checklist */}
+                {project.features && project.features.length > 0 && (
+                    <div className="mt-3 border-t border-slate-200 dark:border-slate-800 pt-8">
+                        <h4 className="flex items-center gap-1 text-xs font-black text-slate-400 mb-6 font-mono uppercase tracking-widest">
+                            <Sparkles size={14} /> Key Engineering Features
+                        </h4>
+                        <div className="flex flex-col gap-5">
+                            {project.features.map((feature, idx) => (
+                                <div key={idx} className="flex gap-4 items-start group">
+                                    <div className="mt-0.5 w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800/80 flex items-center justify-center shrink-0 border border-slate-200 dark:border-slate-700 transition-colors">
+                                        <Check size={12} className="text-slate-500 dark:text-slate-400" />
+                                    </div>
+                                    <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
+                                        {feature}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Split Grid: Challenge & Tech Stack */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 border-t border-slate-200 dark:border-slate-800 pt-8">
                     <div>
                         <h4 className="flex items-center gap-2 text-xs font-black text-slate-400 mb-4 font-mono uppercase tracking-widest">
                             <AlertTriangle size={14} /> The Challenge
                         </h4>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">{project.challenges}</p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                            {project.challenges}
+                        </p>
                     </div>
                     <div>
                         <h4 className="flex items-center gap-2 text-xs font-black text-slate-400 mb-4 font-mono uppercase tracking-widest">
@@ -324,20 +382,15 @@ const ProjectModal = ({ project, onClose }) => (
                         </h4>
                         <div className="flex flex-wrap gap-2">
                             {project.stack.map(t => (
-                                <span key={t} className="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded-md text-[11px] font-bold text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 uppercase tracking-wide">{t}</span>
+                                <span key={t} className="px-2.5 py-1 bg-slate-100 dark:bg-slate-800/50 rounded-md text-[11px] font-bold text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/50 uppercase tracking-wide">
+                                    {t}
+                                </span>
                             ))}
                         </div>
                     </div>
                 </div>
 
-                <div className="pt-10 flex gap-4">
-                    <a href={project.links.github} className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold hover:scale-[1.02] transition-transform">
-                        <Github size={18} /> Source Code
-                    </a>
-                    <a href={project.links.demo} className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl border border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
-                        <ExternalLink size={18} /> Live Demo
-                    </a>
-                </div>
+                
             </div>
         </motion.div>
     </div>
@@ -349,7 +402,7 @@ const Projects = () => {
   const trackRef = useRef(null);
   const [expandedId, setExpandedId] = useState(null);
   const [scrollRange, setScrollRange] = useState(0);
-  const [activeIndex, setActiveIndex] = useState(0); // Added for polish
+  const [activeIndex, setActiveIndex] = useState(0); 
   
   const { scrollYProgress } = useScroll({ target: containerRef });
   
@@ -371,6 +424,23 @@ const Projects = () => {
     }
   }, []);
 
+  // --- THE FIX: Body Scroll Lock ---
+  useEffect(() => {
+    if (expandedId) {
+      // Prevent background scrolling when modal is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Restore scrolling when modal is closed
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function in case component unmounts while modal is open
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [expandedId]);
+  // ---------------------------------
+
   const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
 
   return (
@@ -379,7 +449,6 @@ const Projects = () => {
         ref={containerRef} 
         id="projects"
         className="relative h-[300vh] bg-light-bg dark:bg-dark-bg" 
-        /* CRITICAL FIX: Removed overflow-hidden from here so sticky works */
       >
         <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center">
           
@@ -389,7 +458,6 @@ const Projects = () => {
              <ActiveGradientBackground scrollYProgress={scrollYProgress} />
           </div>
 
-          {/* New Filler: Giant Editorial Number */}
           <EditorialNumber activeIndex={activeIndex} />
 
           {/* Header */}
@@ -404,7 +472,6 @@ const Projects = () => {
              />
           </div>
 
-          {/* New Filler: Metadata Indicator (Bottom Left) */}
           <MetadataIndicator activeIndex={activeIndex} />
 
           {/* Track */}
@@ -421,7 +488,7 @@ const Projects = () => {
                         key={project.id} 
                         project={project} 
                         setExpandedId={setExpandedId}
-                        isActive={activeIndex === index} // Passing active state
+                        isActive={activeIndex === index} 
                     />
                  ))}
                  
@@ -447,7 +514,12 @@ const Projects = () => {
       </section>
 
       <AnimatePresence>
-        {expandedId && <ProjectModal project={PROJECTS.find(p => p.id === expandedId)} onClose={() => setExpandedId(null)} />}
+        {expandedId && (
+          <ProjectModal 
+            project={PROJECTS.find(p => p.id === expandedId)} 
+            onClose={() => setExpandedId(null)} 
+          />
+        )}
       </AnimatePresence>
     </>
   );

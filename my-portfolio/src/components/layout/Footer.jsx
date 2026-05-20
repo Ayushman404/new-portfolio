@@ -172,8 +172,8 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center gap-6">
-                <a href="#" className="hover:text-[var(--color-light-text)] dark:hover:text-white transition-colors">Privacy</a>
-                <a href="/Ayushman_resume_dec18.pdf" target="_blank" className="hover:text-[var(--color-light-text)] dark:hover:text-white transition-colors">Resume</a>
+                {/* <a href="#" className="hover:text-[var(--color-light-text)] dark:hover:text-white transition-colors">Privacy</a> */}
+                <a href="/Ayushman_Resume.pdf" target="_blank" className="hover:text-[var(--color-light-text)] dark:hover:text-white transition-colors">Resume</a>
                 
             </div>
         </div>
