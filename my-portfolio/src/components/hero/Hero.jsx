@@ -237,7 +237,7 @@ const Hero = () => {
           transition={{ delay: 0.6 }}
           className="text-base md:text-lg text-slate-700 dark:text-slate-400 mb-7"
         >
-          Full-stack engineer exploring scalable systems and applied Generative
+          Full-stack engineer exploring scalable distributed systems and Generative
           AI.
         </motion.p>
 

@@ -141,14 +141,15 @@ const About = () => {
               className="h-full p-6 md:p-8 flex flex-col justify-center"
             >
               <h3 className="text-xl md:text-2xl font-bold leading-tight text-slate-800 dark:text-slate-100 mb-4">
-                Second-Year{" "}
+                Junior{" "}
                 <span className="text-indigo-500">AI&DS Undergraduate</span> at
                 IIT Patna
               </h3>
 
               <div className="space-y-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                 <p>
-                  I’m a Artificial Intelligence and Data Science undergraduate focused on{" "}
+                  I’m an Artificial Intelligence and Data Science undergraduate
+                  focused on{" "}
                   <strong className="text-slate-900 dark:text-white">
                     full-stack engineering
                   </strong>{" "}
@@ -160,17 +161,21 @@ const About = () => {
                 </p>
 
                 <p>
-                  I enjoy building clean, production-oriented systems from
-                  modern web applications to{" "}
+                  As a practical, hands-on builder, I enjoy architecting clean,
+                  production-oriented systems—from scalable modern web
+                  applications to{" "}
                   <strong className="text-slate-900 dark:text-white">
-                    LLM-powered features
+                    advanced LLM features
                   </strong>{" "}
-                  like RAG pipelines and backend APIs.
+                  like hybrid-RAG pipelines, agentic workflows, and robust
+                  backend APIs.
                 </p>
 
                 <p>
-                  I value clarity, correctness, and understanding the trade-offs
-                  behind every engineering decision.
+                  Whether deploying on Linux environments or exploring
+                  open-source contributions, I value clarity, reliable system
+                  design, and understanding the real-world trade-offs behind
+                  every engineering decision.
                 </p>
 
                 <div className="pt-2">
@@ -232,10 +237,10 @@ const About = () => {
               </div>
               <div className="h-full flex flex-col justify-center">
                 <div className="w-full space-y-2">
-                  <PositionItem role="Dev Lead" org="GDG IITP" />
-                  <PositionItem role="Sub-Coordinator" org="Celesta" />
-                  <PositionItem role="Sub-Coordinator" org="Infinito" />
-                  <PositionItem role="Core Member" org="NJACK" />
+                  <PositionItem role="Dev Lead" org="acc.iitp.ac.in" />
+                  <PositionItem role="Dev Lead" org="GDG IIT Patna" />
+                  <PositionItem role="Coordinator" org="Celesta" />
+                  {/* <PositionItem role="Core Member" org="NJACK" /> */}
                 </div>
               </div>
             </SpotlightCard>
@@ -260,7 +265,7 @@ const About = () => {
               <div className="h-full flex flex-col justify-center">
                 <div className="flex flex-wrap gap-2 content-center">
                   <TechPill icon={Code2} label="React" />
-                  <TechPill icon={Cpu} label="Next.js" />
+                  <TechPill icon={Cpu} label="Golang/C++" />
                   <TechPill icon={Zap} label="FastAPI" />
                   <TechPill icon={Globe} label="RAG" />
                   <TechPill icon={Database} label="Postgres" />
@@ -312,7 +317,7 @@ const About = () => {
                       2024-28
                     </div>
                     <div className="bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 px-2 py-1 rounded text-[10px] font-bold border border-indigo-100 dark:border-indigo-900/30">
-                      CPI : 8.96
+                      CPI : 9.10
                     </div>
                   </div>
                 </div>

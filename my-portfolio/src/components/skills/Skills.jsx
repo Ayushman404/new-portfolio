@@ -24,6 +24,7 @@ import {
   SiLangchain,
   SiHuggingface,
   SiRust,
+  SiGo,
 } from "react-icons/si";
 import { FiActivity, FiCpu, FiLayers, FiRadio, FiCode } from "react-icons/fi";
 import clsx from "clsx";
@@ -33,6 +34,7 @@ import { FiTerminal, FiTarget } from "react-icons/fi";
 /* ================= DATA ================= */
 const overallIds = [
   "cpp",
+  "golang",
   "python",
   "js",
   "react",
@@ -51,6 +53,13 @@ const allSkills = [
     id: "cpp",
     name: "C++",
     icon: <SiCplusplus />,
+    category: "core",
+    color: "#00599C",
+  },
+  {
+    id: "golang",
+    name: "Golang",
+    icon: <SiGo />,
     category: "core",
     color: "#00599C",
   },
@@ -301,12 +310,12 @@ const FocusWidget = () => {
       <div className="space-y-5 relative z-10">
         {[
           {
-            label: "RAG Systems (LangChain)",
-            progress: 75,
+            label: "Agentic Systems",
+            progress: 70,
             color: "bg-[var(--color-primary)]",
           },
           {
-            label: "PyTorch Fundamentals",
+            label: "Concurrent Systems(Go)",
             progress: 60,
             color: "bg-emerald-500",
           },

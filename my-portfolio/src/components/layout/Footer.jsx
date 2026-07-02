@@ -166,7 +166,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 text-xs font-medium text-[var(--color-light-muted)] dark:text-slate-500 uppercase tracking-wide">
             
             <div className="flex items-center gap-1">
-                <span>© 2025 Ayushman Kumar.</span>
+                <span>© 2026 Ayushman Kumar.</span>
                 <span className="hidden md:inline text-slate-300 dark:text-slate-700 mx-2">|</span>
                 <span className="hidden md:inline">All Rights Reserved.</span>
             </div>
